@@ -1,0 +1,233 @@
+/* FONT */
+@font-face {
+    font-family: MonsReg;
+    src: url(..//fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: MonsBold;
+    src: url(..//fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: MonsSBold;
+    src: url(..//fonts/Montserrat-SemiBold.ttf);
+}
+
+
+/* MAin */
+body{
+    font-family: MonsReg;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+/* header */
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
+}
+.header a{
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.header a:hover{
+    text-decoration:underline;
+}
+.logo{
+    margin-right: 50px;
+}
+
+.subtitle{display: flex;}
+.first h1{
+    font-family: MonsBold;
+}
+
+.scale{
+    transition: 1s;
+}
+.scale:hover {
+    transform: scale(1.6);
+   }
+
+.title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgb(99, 99, 99);
+    border-top: 2px solid rgb(99, 99, 99);;
+}
+/* zayvka */
+
+.zayvka{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.zayvkaconteiner{
+    margin: 20px 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zmain{
+    width: 40%; 
+}
+.zfnz{
+    font-size: 20px;
+    font-family: MonsSBold;
+}
+
+.zayvkaconteiner div{
+    margin-top: 5px;
+}
+.photo img{
+    width: 400px;
+    height: 300px;
+}
+.first{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Для Регистрации и авторизации, а также инпуты */
+
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 330px;
+}
+.inp1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #000;
+    height: 40px;
+}
+
+
+.check{
+    display: flex;
+    align-items: center;
+}
+
+.checkb{
+    height: 15px;
+    width: 15px;
+}
+.check span{
+    font-size: 12px;
+    margin-left: 6px;
+}
+.btn_sub {
+    margin-top: 20px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: MonsReg;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+/* Заявки */
+.zayv{
+    flex-direction: column;
+    align-items: center;
+}
+.border-b{
+    font-size: 28px;
+    padding-top: 5px;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    border-top: 2px solid black;
+    display: flex;
+    align-items: flex-start;
+}
+
+.btndelete{
+margin-top: 20px;
+background-color: #000;
+color: rgb(255, 255, 255);
+height: 45px;
+width: 180px;
+border-radius: 20px;
+font-family: MonsReg;
+}
+/* Медиа */
+@media (max-width: 1020px) {
+
+    .zayvka{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .zayvkaconteiner{
+        margin: 10px 10px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .zayvka{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .zayvkaconteiner{
+        margin: 10px 10px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .header a{
+        font-size: 14px;
+    }
+
+    .border-b{
+        font-size: 14px;
+        padding-top: 5px;
+        border-bottom: 2px solid black;
+        padding-bottom: 5px;
+        border-top: 2px solid black;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .btndelete{
+        margin-top: 20px;
+        background-color: #000;
+        color: rgb(255, 255, 255);
+        height: 30px;
+        width: 120px;
+        border-radius: 20px;
+        font-family: MonsReg;
+        }
+    .logo{
+        display:none;
+    }
+}
