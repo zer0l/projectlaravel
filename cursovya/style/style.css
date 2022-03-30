@@ -32,10 +32,12 @@ dd {
 }
 /* Шапка(Header) */
 .header {
+  display: flex;
+  flex-direction: column;
   height: 70vh;
-  background-image: url(../img/bg-header.png);
   background-position: center center;
   background-size: cover;
+  transition: all 1s ease-out;
 }
 .header-conteiner {
   display: flex;
@@ -57,19 +59,34 @@ dd {
 }
 .menu-punkt a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
   font-size: 18px;
   line-height: 22px;
   font-family: MR;
 }
-.menu-punkt a:hover {
+
+.mp-main {
+  color: rgb(255, 255, 255);
+}
+.mp-main:visited {
+  color: rgb(255, 255, 255);
+}
+.mp-main:hover {
   border-bottom: 3px solid rgb(255, 255, 255);
   font-family: MB;
   font-size: 18px;
   line-height: 22px;
 }
-.menu-punkt a:visited {
+.mp-catalog:hover {
+  border-bottom: 3px solid rgb(0, 0, 0);
+  font-family: MB;
+  font-size: 18px;
+  line-height: 22px;
 }
+.mp-catalog:visited {
+  color: black;
+}
+
+/* ТЕКСТ ПО СЕРЕДИНЕ */
 .header-conteiner-tittle {
   display: flex;
   justify-content: center;
@@ -90,4 +107,51 @@ dd {
   font-size: 12px;
   line-height: 15px;
   width: 300px;
+}
+/* СЛАЙДЕР */
+.slider-conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.slid1 {
+  background-image: url(../img/bg-header.png);
+}
+.slid2 {
+  background-image: url(../img/logo.png);
+}
+.slid3 {
+  background-image: url(../img/bg-header.png);
+}
+.slid4 {
+  background-image: url(../img/logo.png);
+}
+/* Услуги */
+.uslg {
+  margin-top: 40px;
+  height: 30vh;
+}
+.uslg-conteiner {
+  display: flex;
+  flex-direction: column;
+}
+.uslg-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-family: MB;
+}
+.uslg-box {
+  display: flex;
+  justify-content: space-around;
+  font-family: MR;
+}
+.uslg-boxs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
