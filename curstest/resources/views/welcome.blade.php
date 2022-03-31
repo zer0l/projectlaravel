@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/button.css">
-    <title>Салон автомибелей</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AS</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- Script -->
+    <script src="{{ asset('js/script.js') }}" defer></script>
 </head>
+
 <body>
+
     <div class="header slid1" id="header">
         <div class="header-conteiner">
             <div class="logo"><img src="img/logo.png" alt="10"></div>
@@ -19,6 +28,20 @@
                     <li class="menu-punkt"><a class="mp-main" href="#">Продать авто</a></li>
                     <li class="menu-punkt"><a class="mp-main" href="#">Контакты</a></li>
                     <li class="menu-punkt"><a class="mp-main" href="#">Услуги</a></li>
+                </ul>
+                <ul class="reg">
+                    @if (Route::has('login'))
+                    @auth
+                    <li class="menu-punkt"><a href="{{ url('/dashboard') }}" <a class="mp-main">Личный кабинет</a></li>
+                    @else
+                    <li class="menu-punkt"> <a href="{{ route('login') }}" <a class="mp-main">Войти</a></li>
+
+                    @if (Route::has('register'))
+                    <li class="menu-punkt"> <a href="{{ route('register') }}" <a class="mp-main">Регистрация</a></li>
+
+                    @endif
+                    @endauth
+                    @endif
                 </ul>
             </div>
         </div>
@@ -57,7 +80,7 @@
             <div class="catalog_avto">
                 <div class="catalog_avto-conteiner">
                     <div class="uslg-title">
-                        Автомобили с пробегом 
+                        Автомобили с пробегом
                     </div>
                     <div class="catalog-box">
                         <div class="catalog-item">
@@ -65,7 +88,7 @@
                             <div class="item-t">Марка: !!!!</div>
                             <div class="item-t">Модель: !!!!</div>
                             <div class="item-t">Пробег: !!!!</div>
-                            <div class="item-descript">Седан, Комплектация Monte Carlo, без ДТП,  1 хозяин</div>
+                            <div class="item-descript">Седан, Комплектация Monte Carlo, без ДТП, 1 хозяин</div>
                             <div class="item-price">999 999 Rub.</div>
                             <div class="btn-box"><button class="item-btn">Посмотреть</button></div>
                         </div>
@@ -74,7 +97,7 @@
                             <div class="item-t">Марка: !!!!</div>
                             <div class="item-t">Модель: !!!!</div>
                             <div class="item-t">Пробег: !!!!</div>
-                            <div class="item-descript">Седан, Комплектация Monte Carlo, без ДТП,  1 хозяин</div>
+                            <div class="item-descript">Седан, Комплектация Monte Carlo, без ДТП, 1 хозяин</div>
                             <div class="item-price">999 999 Rub.</div>
                             <div class="btn-box"><button class="item-btn">Посмотреть</button></div>
                         </div>
@@ -83,7 +106,7 @@
                             <div class="item-t">Марка: !!!!</div>
                             <div class="item-t">Модель: !!!!</div>
                             <div class="item-t">Пробег: !!!!</div>
-                            <div class="item-descript">Седан, Комплектация Monte Carlo, без ДТП,  1 хозяин</div>
+                            <div class="item-descript">Седан, Комплектация Monte Carlo, без ДТП, 1 хозяин</div>
                             <div class="item-price">999 999 Rub.</div>
                             <div class="btn-box"><button class="item-btn">Посмотреть</button></div>
                         </div>
@@ -119,6 +142,6 @@
             zerO 2022*
         </div>
     </div>
-    <script src="script/script.js"></script>
 </body>
+
 </html>

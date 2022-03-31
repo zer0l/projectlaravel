@@ -30,6 +30,10 @@ dd {
   font-family: MB;
   src: url(../fonts/Montserrat-Bold.ttf);
 }
+@font-face {
+  font-family: author;
+  src: url(../fonts/PressStart2P-Regular.ttf);
+}
 /* Шапка(Header) */
 .header {
   display: flex;
@@ -143,6 +147,8 @@ dd {
   justify-content: center;
   margin-bottom: 30px;
   font-family: MB;
+  font-size: 24px;
+  line-height: 29px;
 }
 .uslg-box {
   display: flex;
@@ -154,4 +160,107 @@ dd {
   justify-content: center;
   align-items: center;
   align-content: center;
+  height: 150px;
+  width: 250px;
+  background: #a0ffb0;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+
+/* КАТАЛОГ НА ГЛАВНОЙ */
+.catalog_avto {
+  height: 60vh;
+}
+.catalog-box {
+  display: flex;
+  justify-content: space-around;
+}
+.catalog-item {
+  width: 360px;
+  height: 450px;
+  background: #e4f0f1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: MR;
+}
+
+.item-image {
+  display: flex;
+  justify-content: center;
+}
+.item-image img {
+  margin-top: 45px;
+  height: 150px;
+  width: 300px;
+  border-radius: 5px;
+}
+.item-t {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+.item-descript {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 17px;
+}
+.item-price {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-family: MB;
+  font-size: 24px;
+  line-height: 29px;
+}
+.btn-box {
+  display: flex;
+  justify-content: center;
+}
+
+.item-btn {
+  margin-top: 20px;
+  width: 200px;
+  height: 38px;
+  background: #000000;
+  color: white;
+  font-family: MB;
+  border-radius: 5px;
+}
+.catalog-link {
+  display: flex;
+  justify-content: center;
+}
+.catalog-link:hover {
+  font-family: MB;
+  color: #000000;
+}
+
+.catalog-link a {
+  font-family: MR;
+  margin-top: 30px;
+  color: #6c6c6c;
+  text-decoration: none;
+}
+
+.catalog-link a:hover {
+  font-family: MB;
+  color: #000000;
+  text-decoration: underline;
+}
+/* Услуги */
+.catalog_servis {
+  height: 40vh;
+}
+/*Форма */
+.form_manager {
+  height: 40vh;
+}
+/* Футер */
+.footer {
+  font-family: author;
+  font-size: 16px;
 }

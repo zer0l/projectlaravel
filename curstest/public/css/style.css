@@ -1,0 +1,296 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Шрифты */
+@font-face {
+    font-family: MR;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: MB;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: author;
+    src: url(../fonts/PressStart2P-Regular.ttf);
+}
+
+body {
+    font-family: MR;
+}
+/* Шапка(Header) */
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    background-position: center center;
+    background-size: cover;
+    transition: all 1s ease-out;
+}
+.header-conteiner {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding-top: 45px;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+}
+.reg {
+    display: flex;
+}
+.menu-conteiner {
+    display: flex;
+}
+.menu {
+    display: flex;
+}
+.menu-punkt {
+    margin-right: 20px;
+    list-style-type: none;
+}
+.menu-punkt a {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: MR;
+}
+
+.mp-main {
+    color: rgb(255, 255, 255);
+}
+.mp-main:visited {
+    color: rgb(255, 255, 255);
+}
+.mp-main:hover {
+    border-bottom: 3px solid rgb(255, 255, 255);
+    font-family: MB;
+    font-size: 18px;
+    line-height: 22px;
+}
+.mp-catalog:hover {
+    border-bottom: 3px solid rgb(0, 0, 0);
+    font-family: MB;
+    font-size: 18px;
+    line-height: 22px;
+}
+.mp-catalog:visited {
+    color: black;
+}
+
+/* ТЕКСТ ПО СЕРЕДИНЕ */
+.header-conteiner-tittle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 265px;
+    color: white;
+}
+.header-tittle {
+    letter-spacing: 0.02em;
+    font-size: 24px;
+    line-height: 29px;
+    font-family: MB;
+}
+.header-text {
+    font-family: MR;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 15px;
+    width: 300px;
+}
+/* СЛАЙДЕР */
+.slider-conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.slid1 {
+    background-image: url(../img/bg-header.png);
+}
+.slid2 {
+    background-image: url(../img/logo.png);
+}
+.slid3 {
+    background-image: url(../img/bg-header.png);
+}
+.slid4 {
+    background-image: url(../img/logo.png);
+}
+/* Услуги */
+.uslg {
+    margin-top: 40px;
+    height: 30vh;
+}
+.uslg-conteiner {
+    display: flex;
+    flex-direction: column;
+}
+.uslg-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-family: MB;
+    font-size: 24px;
+    line-height: 29px;
+}
+.uslg-box {
+    display: flex;
+    justify-content: space-around;
+    font-family: MR;
+}
+.uslg-boxs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 150px;
+    width: 250px;
+    background: #a0ffb0;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+/* КАТАЛОГ НА ГЛАВНОЙ */
+.catalog_avto {
+    height: 60vh;
+}
+.catalog-box {
+    display: flex;
+    justify-content: space-around;
+}
+.catalog-item {
+    width: 360px;
+    height: 450px;
+    background: #e4f0f1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: MR;
+}
+
+.item-image {
+    display: flex;
+    justify-content: center;
+}
+.item-image img {
+    margin-top: 45px;
+    height: 150px;
+    width: 300px;
+    border-radius: 5px;
+}
+.item-t {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.item-descript {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+}
+.item-price {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: MB;
+    font-size: 24px;
+    line-height: 29px;
+}
+.btn-box {
+    display: flex;
+    justify-content: center;
+}
+
+.item-btn {
+    margin-top: 20px;
+    width: 200px;
+    height: 38px;
+    background: #000000;
+    color: white;
+    font-family: MB;
+    border-radius: 5px;
+}
+.catalog-link {
+    display: flex;
+    justify-content: center;
+}
+.catalog-link:hover {
+    font-family: MB;
+    color: #000000;
+}
+
+.catalog-link a {
+    font-family: MR;
+    margin-top: 30px;
+    color: #6c6c6c;
+    text-decoration: none;
+}
+
+.catalog-link a:hover {
+    font-family: MB;
+    color: #000000;
+    text-decoration: underline;
+}
+/* Услуги */
+.catalog_servis {
+    height: 40vh;
+}
+/*Форма */
+.form_manager {
+    height: 40vh;
+}
+/* Футер */
+.footer {
+    font-family: author;
+    font-size: 16px;
+}
+/* ФОРМА ДОБАВЛЕНИЯ АВТОМОБИЛЯ */
+.form-cont {
+    display: flex;
+    justify-content: center;
+}
+.form-post {
+    display: flex;
+    min-width: 400px;
+    justify-content: center;
+    flex-direction: column;
+}
+.form-post label {
+    font-family: MB;
+}
+.inp-add {
+    border: none;
+    border-bottom: 2px solid #000;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
