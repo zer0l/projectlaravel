@@ -13,29 +13,40 @@
                         <form action="{{ route('car-submit') }}" method="post" class="form-post">
                             @csrf
                             <label for="">
-                                Введите марку
+                                Выберете марку
                             </label>
-                            <input type="text" name="brand" id="brand" class="inp-add">
+                            <!-- <input type="text" name="brand" id="brand" class="inp-add" required> -->
+                            <select name="brand" id="brand" class="inp-add" required>
+                                <option value="">Выберете марку</option>
+                                @foreach($brand as $el)
+                                <option value="{{$el->addbrand}}">{{$el->addbrand}}</option>
+                                @endforeach
+                            </select>
                             <label for="">
                                 Введите модель
                             </label>
-                            <input type="text" name="model" id="model" class="inp-add">
+                            <input type="text" name="model" id="model" class="inp-add" required>
                             <label for="">
                                 Год выпуска
                             </label>
-                            <input type="text" name="year" id="year" class="inp-add">
+                            <input type="text" name="year" id="year" class="inp-add" required pattern="[1-2]{1}[0-9]{3}">
                             <label for="">
                                 Пробег
                             </label>
-                            <input type="text" name="probeg" id="probeg" class="inp-add">
+                            <input type="text" name="probeg" id="probeg" class="inp-add" required>
                             <label for="">
                                 Владельцев по ПТС
                             </label>
-                            <input type="text" name="xoz" id="xoz" class="inp-add">
-                            <!-- <label for="">
+                            <input type="text" name="xoz" id="xoz" class="inp-add" pattern="[0-9]{,1}" required>
+                            <label for="opis">
                                 Краткое описание
                             </label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea> -->
+                            <textarea name="opis" id="opis" cols="30" rows="10" required></textarea>
+
+                            <label for="">
+                                Цена
+                            </label>
+                            <input type="text" name="price" id="price" class="inp-add" value="" pattern="[0-9]{4,}" required>
                             <div class="flex items-center justify-center mt-4">
                                 <x-button class="ml-3">
                                     {{ __('Добавить') }}

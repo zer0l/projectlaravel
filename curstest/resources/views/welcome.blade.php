@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/btn.css') }}">
     <!-- Script -->
     <script src="{{ asset('js/script.js') }}" defer></script>
 </head>
@@ -56,13 +57,23 @@
             </div>
         </div>
         <div class="slider-conteiner">
-            <div class="slider">
-                <input type="radio" name="elem" id="rad1" value="1" checked>
-                <input type="radio" name="elem" id="rad2" value="2">
-                <input type="radio" name="elem" id="rad3" value="3">
-                <input type="radio" name="elem" id="rad4" value="4">
+            <div class="switch">
+                <!-- <input name="switch" id="one" type="radio" checked />
+                <label for="one" class="switch__label">One</label>
+                <input name="switch" id="two" type="radio" />
+                <label for="two" class="switch__label">Two</label>
+                <input name="switch" id="three" type="radio" />
+                <label for="three" class="switch__label">Three</label>
+                <div class="switch__indicator" /> -->
+                <input type="radio" name="elem" class="radiobtn" id="rad1" value="1" checked>
+                <input type="radio" name="elem" class="radiobtn" id="rad2" value="2">
+                <input type="radio" name="elem" class="radiobtn" id="rad3" value="3">
+                <input type="radio" name="elem" class="radiobtn" id="rad4" value="4">
             </div>
         </div>
+
+    </div>
+    </div>
     </div>
     <div class="main">
         <div class="main-conteiner">
@@ -83,33 +94,17 @@
                         Автомобили с пробегом
                     </div>
                     <div class="catalog-box">
+                        @foreach($car as $el)
                         <div class="catalog-item">
                             <div class="item-image"><img src="img/bg-header.png" alt="1"></div>
-                            <div class="item-t">Марка: !!!!</div>
-                            <div class="item-t">Модель: !!!!</div>
-                            <div class="item-t">Пробег: !!!!</div>
-                            <div class="item-descript">Седан, Комплектация Monte Carlo, без ДТП, 1 хозяин</div>
-                            <div class="item-price">999 999 Rub.</div>
+                            <div class="item-t">Марка: {{$el->brand}}</div>
+                            <div class="item-t">Модель: {{$el->model}}</div>
+                            <div class="item-t">Пробег: {{$el->probeg}}</div>
+                            <div class="item-descript">{{$el->opis}}</div>
+                            <div class="item-price">{{$el->price}}₽</div>
                             <div class="btn-box"><button class="item-btn">Посмотреть</button></div>
                         </div>
-                        <div class="catalog-item">
-                            <div class="item-image"><img src="img/bg-header.png" alt="1"></div>
-                            <div class="item-t">Марка: !!!!</div>
-                            <div class="item-t">Модель: !!!!</div>
-                            <div class="item-t">Пробег: !!!!</div>
-                            <div class="item-descript">Седан, Комплектация Monte Carlo, без ДТП, 1 хозяин</div>
-                            <div class="item-price">999 999 Rub.</div>
-                            <div class="btn-box"><button class="item-btn">Посмотреть</button></div>
-                        </div>
-                        <div class="catalog-item">
-                            <div class="item-image"><img src="img/bg-header.png" alt="1"></div>
-                            <div class="item-t">Марка: !!!!</div>
-                            <div class="item-t">Модель: !!!!</div>
-                            <div class="item-t">Пробег: !!!!</div>
-                            <div class="item-descript">Седан, Комплектация Monte Carlo, без ДТП, 1 хозяин</div>
-                            <div class="item-price">999 999 Rub.</div>
-                            <div class="btn-box"><button class="item-btn">Посмотреть</button></div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="catalog-link">
                         <a href="#">Все автомобили</a>

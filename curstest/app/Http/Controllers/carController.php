@@ -16,11 +16,18 @@ class carController extends Controller
         $zayvka->year = $req->input('year');
         $zayvka->probeg = $req->input('probeg');
         $zayvka->xoz = $req->input('xoz');
+        $zayvka->opis = $req->input('opis');
+        $zayvka->price = $req->input('price');
 
 
         $zayvka->save();
 
 
         return redirect()->route('addCar');
+    }
+
+    public function welcomePaginate()
+    {
+        return view('welcome', ['car' => carModels::simplepaginate(3)]);
     }
 }

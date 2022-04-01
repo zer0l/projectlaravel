@@ -132,16 +132,20 @@ body {
 }
 
 .slid1 {
-    background-image: url(../img/bg-header.png);
+    transition: all 1s ease-out;
+    background-image: url(../img/slid11.jpg);
 }
 .slid2 {
-    background-image: url(../img/logo.png);
+    transition: all 1s ease-out;
+    background-image: url(../img/slid21.jpg);
 }
 .slid3 {
-    background-image: url(../img/bg-header.png);
+    transition: all 1s ease-out;
+    background-image: url(../img/slid31.jpg);
 }
 .slid4 {
-    background-image: url(../img/logo.png);
+    transition: all 1s ease-out;
+    background-image: url(../img/slid41.jpg);
 }
 /* Услуги */
 .uslg {
@@ -287,6 +291,17 @@ body {
 }
 .form-post label {
     font-family: MB;
+}
+.form-post textarea {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    resize: none;
+    height: 150px;
+    /* border: none;
+    border-left: 1px solid black;
+    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+    border-right: 2px solid black; */
 }
 .inp-add {
     border: none;
