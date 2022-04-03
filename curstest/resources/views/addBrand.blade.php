@@ -22,6 +22,28 @@
                             </x-button>
                     </div>
                     </form>
+                    <div class="form-cont">
+                        <form action="{{ route('model-submit') }}" method="post" class="form-post">
+                            @csrf
+                            <label for="" style="margin-top:15px;">
+                            Выберете марку
+                            </label>
+                            <select name="brands" id="brands" class="inp-add" required>
+                                <option value="" selected = "selected">Выберете марку</option>
+                                @foreach($brand as $el)
+                                <option value="{{$el->id}}">{{$el->addbrand}}</option>
+                                @endforeach
+                            </select>
+                            <label for="">
+                                Введите модель
+                            </label>
+                            <input type="text" name="addmodel" id="addmodel" class="inp-add" required>
+
+                            <x-button class="ml-3">
+                                {{ __('Добавить') }}
+                            </x-button>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>

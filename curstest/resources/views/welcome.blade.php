@@ -24,11 +24,11 @@
             <div class="logo"><img src="img/logo.png" alt="10"></div>
             <div class="menu-conteiner">
                 <ul class="menu">
-                    <li class="menu-punkt"><a class="mp-main" href="catalog.html">Купить авто</a></li>
-                    <li class="menu-punkt"><a class="mp-main" href="#">Сервис</a></li>
-                    <li class="menu-punkt"><a class="mp-main" href="#">Продать авто</a></li>
-                    <li class="menu-punkt"><a class="mp-main" href="#">Контакты</a></li>
-                    <li class="menu-punkt"><a class="mp-main" href="#">Услуги</a></li>
+                    <li class="menu-punkt"><a class="mp-main" href="{{ route('catalog') }}">Купить авто</a></li>
+                    <li class="menu-punkt"><a class="mp-main" href="{{ route('servis') }}">Сервис</a></li>
+                    <li class="menu-punkt"><a class="mp-main" href="#vikup">Продать авто</a></li>
+                    <!-- <li class="menu-punkt"><a class="mp-main" href="#">Контакты</a></li> -->
+                    <!-- <li class="menu-punkt"><a class="mp-main" href="#">Услуги</a></li> -->
                 </ul>
                 <ul class="reg">
                     @if (Route::has('login'))
@@ -58,13 +58,6 @@
         </div>
         <div class="slider-conteiner">
             <div class="switch">
-                <!-- <input name="switch" id="one" type="radio" checked />
-                <label for="one" class="switch__label">One</label>
-                <input name="switch" id="two" type="radio" />
-                <label for="two" class="switch__label">Two</label>
-                <input name="switch" id="three" type="radio" />
-                <label for="three" class="switch__label">Three</label>
-                <div class="switch__indicator" /> -->
                 <input type="radio" name="elem" class="radiobtn" id="rad1" value="1" checked>
                 <input type="radio" name="elem" class="radiobtn" id="rad2" value="2">
                 <input type="radio" name="elem" class="radiobtn" id="rad3" value="3">
@@ -83,7 +76,7 @@
                     <div class="uslg-box">
                         <div class="uslg-boxs">Купить автомобиль с пробегом</div>
                         <div class="uslg-boxs">Продать ваш автомобиль</div>
-                        <div class="uslg-boxs">Оформить полис ОСАГО/КАСКО</div>
+                        <!-- <div class="uslg-boxs">Оформить полис ОСАГО/КАСКО</div> -->
                         <div class="uslg-boxs">Провести ТО</div>
                     </div>
                 </div>
@@ -97,7 +90,7 @@
                         @foreach($car as $el)
                         <div class="catalog-item">
                             <div class="item-image"><img src="img/bg-header.png" alt="1"></div>
-                            <div class="item-t">Марка: {{$el->brand}}</div>
+                            <div class="item-t">Марка: {{$el->brand_id}}</div>
                             <div class="item-t">Модель: {{$el->model}}</div>
                             <div class="item-t">Пробег: {{$el->probeg}}</div>
                             <div class="item-descript">{{$el->opis}}</div>
@@ -128,6 +121,19 @@
             <div class="form_manager">
                 <div class="form_manager-conteiner">
                     <div class="uslg-title">Выкуп вашего авто</div>
+                    <div class="catalog-link"> Оставьте заявку, менджер поможет вам заполнить анкету или заполните сами</div>
+                    <div class="uslg-box">
+                        <div class="vikup-form" id="vikup">
+                            <form action="{{ route('vikup-submit') }}" method="post">
+                            @csrf
+                                <input type="text" name="fio_client" id="fio_client" class="inp-add" placeholder = "Введите имя">
+                                <input type="text" name="number_client" id="number_client" class="inp-add" placeholder = "Введите номер">
+                                <input type="hidden" name="status_client"  id="status_client" value ="Выкуп авто">
+                                <input type="submit" value="Добавить">
+                            </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,6 +143,10 @@
             zerO 2022*
         </div>
     </div>
+    <script src="{{ asset('js/jq.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.maskedinput.js') }}" defer></script>
+    <script src="{{ asset('js/mask.js') }}" defer></script>
+    <script src="{{ asset('js/testajax.js') }}" defer></script>
 </body>
 
 </html>

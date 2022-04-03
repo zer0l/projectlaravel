@@ -26,6 +26,11 @@
                         {{ __('Добавление Марки и Модели') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('deleteCar')" :active="request()->routeIs('deleteCar')">
+                        {{ __('Удаление авто') }}
+                    </x-nav-link>
+                </div>
                 @else
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('/')" :active="request()->routeIs('/')">

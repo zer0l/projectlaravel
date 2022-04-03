@@ -1,10 +1,11 @@
 .radiobtn {
     appearance: none;
-    border: 5px solid #d7f9fc;
+    border: 5px solid #181818;
     border-radius: 10px;
     transition: all 1s ease-out;
 }
+
 .radiobtn:checked {
-    border: 6px solid rgb(255, 255, 255);
+    border: 6px solid rgb(167, 167, 167);
     transition: all 0.5s ease-out;
 }

@@ -34,6 +34,10 @@
             {{ $slot }}
         </main>
     </div>
+    <script src="{{ asset('js/jq.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.maskedinput.js') }}" defer></script>
+    <script src="{{ asset('js/mask.js') }}" defer></script>
+    <script src="{{ asset('js/testajax.js') }}" defer></script>
 </body>
 
 </html>
