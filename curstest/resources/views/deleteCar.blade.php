@@ -11,17 +11,17 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="form-cont">
                         @foreach($car as $el)
-                            <div class="catalog-item">
-                                <div class="item-image"><img src="img/bg-header.png" alt="1"></div>
-                                <div class="item-t">Марка: {{$el->brand_id}}</div>
-                                <div class="item-t">Модель: {{$el->model}}</div>
-                                <div class="item-t">Пробег: {{$el->probeg}}</div>
-                                <div class="item-descript">{{$el->opis}}</div>
-                                <div class="item-price">{{$el->price}}₽</div>
-                                <div class="btn-box"><a href="{{ route('car-delete', $el->id) }}"><button class="item-btn">Удалить</button></a></div>
-                            </div>
+                        <div class="catalog-item">
+                            <div class="item-image"><img src="img/bg-header.png" alt="1"></div>
+                            <div class="item-t">Марка: {{$el->cars->addbrand}}</div>
+                            <div class="item-t">Модель: {{$el->model}}</div>
+                            <div class="item-t">Пробег: {{$el->probeg}}</div>
+                            <div class="item-descript">{{$el->opis}}</div>
+                            <div class="item-price">{{$el->price}}₽</div>
+                            <div class="btn-box"><a href="{{ route('car-delete', $el->id) }}"><button class="item-btn">Удалить</button></a></div>
+                        </div>
                         @endforeach
-                    
+
                     </div>
                     {{$car ->links()}}
                 </div>

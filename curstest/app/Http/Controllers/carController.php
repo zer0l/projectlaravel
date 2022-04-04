@@ -29,19 +29,23 @@ class carController extends Controller
 
     public function welcomePaginate()
     {
+
+        // $brand = new Brand;
+        // $brands = Brand::find(1);
+        // $brands = $brand->cars->addbrand;
+
         $carPagin = car::simplepaginate(3);
         return view('welcome', ['car' => $carPagin]);
     }
 
     public function catalogDate()
     {
-        return view('catalog', ['car' => car::all()]);
+        return view('catalog', ['car' => car::simplepaginate(6)]);
     }
 
     public function delcatalogDate()
     {
         return view('deleteCar', ['car' => car::Paginate(6)]);
-        
     }
     public function delcatalogDelete($id)
     {

@@ -26,19 +26,29 @@
                 <ul class="menu">
                     <li class="menu-punkt"><a class="mp-catalog" href="{{ url('/') }}">Главная</a></li>
                     <li class="menu-punkt"><a class="mp-catalog" href="{{ route('catalog') }}">Купить авто</a></li>
-                    <li class="menu-punkt"><a class="mp-catalog" href="#">Продать авто</a></li>
+                    <li class="menu-punkt"><a class="mp-catalog" href="#vikup">Продать авто</a></li>
                     <!-- <li class="menu-punkt"><a class="mp-catalog" href="#">Контакты</a></li> -->
-                    <li class="menu-punkt"><a class="mp-catalog" href="#">Услуги</a></li>
+                    <!-- <li class="menu-punkt"><a class="mp-catalog" href="#">Услуги</a></li> -->
                 </ul>
             </div>
         </div>
         <div class="main">
+            <form action="{{ route('uslg-submit') }}" method="post">
+                @csrf
+                <input type="text" name="fio_client" id="fio_client" class="inp-add" placeholder="Введите имя" required>
+                <select name="status_client" id="status_client" required>
+                    <option value="">Выберите услугу</option>
+                    <option value="Покупка">Покупка</option>
+                </select>
+                <input type="text" name="number_client" id="number_client" class="inp-add" placeholder="Введите номер" required>
+                <input type="submit" value="Добавить">
+            </form>
         </div>
-    <div class="footer">
-        <div class="footer-conteiner">
-            zerO 2022*
+        <div class="footer">
+            <div class="footer-conteiner">
+                zerO 2022*
+            </div>
         </div>
-    </div>
 </body>
 
 </html>

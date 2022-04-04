@@ -9,11 +9,6 @@ class Brand extends Model
 {
     public function avtoMs()
     {
-       return $this->hasMany(avtoM::class);
-    }
-
-    public function brand()
-    {
-       return $this->hasOne(car::class)->select('addbrand');
+        return $this->hasMany(avtoM::class);
     }
 }

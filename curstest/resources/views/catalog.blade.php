@@ -13,13 +13,14 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/btn.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> -->
     <!-- Script -->
     <script src="{{ asset('js/script.js') }}" defer></script>
 </head>
 
 <body>
 
-    <div class="header" id="header">
+    <div class="header-catal" id="header">
         <div class="header-conteiner">
             <div class="logo"><img src="img/logo.png" alt="10"></div>
             <div class="menu-conteiner">
@@ -32,19 +33,25 @@
                 </ul>
             </div>
         </div>
-        <div class="main">
+    </div>
+    <div class="main-catl">
+        <div class="catalog-conts">
             @foreach($car as $el)
-            <div class="catalog-item">
+            <div class="catl-item">
                 <div class="item-image"><img src="img/bg-header.png" alt="1"></div>
-                <div class="item-t">Марка: {{$el->brand_id}}</div>
+                <div class="item-t">Марка: {{$el->cars->addbrand}}</div>
                 <div class="item-t">Модель: {{$el->model}}</div>
                 <div class="item-t">Пробег: {{$el->probeg}}</div>
+                <div class="item-t">Год выпуска: {{$el->year}}</div>
+                <div class="item-t">Хозяев: {{$el->xoz}}</div>
                 <div class="item-descript">{{$el->opis}}</div>
                 <div class="item-price">{{$el->price}}₽</div>
                 <div class="btn-box"><button class="item-btn">Посмотреть</button></div>
             </div>
             @endforeach
         </div>
+        <div class="catalog-links">{{$car->links()}}</div>
+    </div>
     <div class="footer">
         <div class="footer-conteiner">
             zerO 2022*

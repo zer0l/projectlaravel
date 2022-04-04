@@ -87,12 +87,15 @@
                         Автомобили с пробегом
                     </div>
                     <div class="catalog-box">
+
+
                         @foreach($car as $el)
                         <div class="catalog-item">
                             <div class="item-image"><img src="img/bg-header.png" alt="1"></div>
-                            <div class="item-t">Марка: {{$el->brand_id}}</div>
+                            <div class="item-t">Марка: {{$el->cars->addbrand}} </div>
                             <div class="item-t">Модель: {{$el->model}}</div>
                             <div class="item-t">Пробег: {{$el->probeg}}</div>
+                            <div class="item-t">Год выпуска: {{$el->year}}</div>
                             <div class="item-descript">{{$el->opis}}</div>
                             <div class="item-price">{{$el->price}}₽</div>
                             <div class="btn-box"><button class="item-btn">Посмотреть</button></div>
@@ -125,18 +128,18 @@
                     <div class="uslg-box">
                         <div class="vikup-form" id="vikup">
                             <form action="{{ route('vikup-submit') }}" method="post">
-                            @csrf
-                                <input type="text" name="fio_client" id="fio_client" class="inp-add" placeholder = "Введите имя">
-                                <input type="text" name="number_client" id="number_client" class="inp-add" placeholder = "Введите номер">
-                                <input type="hidden" name="status_client"  id="status_client" value ="Выкуп авто">
+                                @csrf
+                                <input type="text" name="fio_client" id="fio_client" class="inp-add" placeholder="Введите имя" required>
+                                <input type="text" name="number_client" id="number_client" class="inp-add" placeholder="Введите номер" required>
+                                <input type="hidden" name="status_client" id="status_client" value="Выкуп авто">
                                 <input type="submit" value="Добавить">
-                            </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="footer">
         <div class="footer-conteiner">

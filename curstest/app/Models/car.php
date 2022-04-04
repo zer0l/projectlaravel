@@ -7,12 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class car extends Model
 {
-    public function car()
-    {
-       return $this->hasOne(Brand::class);
-    }
-    public function brand()
-    {
-       return $this->hasOne(car::class)->select('addbrand');
-    }
+
+   public function cars()
+   {
+      return $this->hasOne(Brand::class, 'id', 'brand_id');
+   }
 }

@@ -16,13 +16,13 @@
                                 Выберете марку
                             </label>
                             <select name="brand" id="brand" class="inp-add" required>
-                                <option value="" >Выберете марку</option>
+                                <option value="0">Выберете марку</option>
                                 @foreach($brand as $brands)
-                                <option value="{{$brands->id}}" >{{$brands->addbrand}}</option>
+                                <option value="{{$brands->id}}">{{$brands->addbrand}}</option>
                                 @endforeach
                             </select>
-                            <label for="">
-                                Введите модель
+                            <label for="model" id="model-label">
+                                Выберете модель
                             </label>
                             <select name="model" id="model" class="inp-add" required>
                                 <option value="">Выберете марку</option>
@@ -30,7 +30,7 @@
                             <label for="">
                                 Год выпуска
                             </label>
-                            <input type="month" name="year" id="year" class="inp-add" required pattern="[1-2]{1}[0-9]{3}">
+                            <input type="month" name="year" id="year" class="inp-add" required pattern="[1-2]{1}[0-9]{3}" max="2022-05">
                             <label for="">
                                 Пробег
                             </label>
