@@ -103,7 +103,7 @@
                         @endforeach
                     </div>
                     <div class="catalog-link">
-                        <a href="#">Все автомобили</a>
+                        <a href="{{ route('catalog') }}">Все автомобили</a>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                         <div class="uslg-boxs">Провести ТО</div>
                     </div>
                     <div class="catalog-link">
-                        <a href="#">Все услуги</a>
+                        <a href="{{ route('servis') }}">Все услуги</a>
                     </div>
                 </div>
             </div>
@@ -126,13 +126,13 @@
                     <div class="uslg-title">Выкуп вашего авто</div>
                     <div class="catalog-link"> Оставьте заявку, менджер поможет вам заполнить анкету или заполните сами</div>
                     <div class="uslg-box">
-                        <div class="vikup-form" id="vikup">
-                            <form action="{{ route('vikup-submit') }}" method="post">
+                        <div class="form-cont" id="vikup">
+                            <form action="{{ route('vikup-submit') }}" method="post" class="form-post">
                                 @csrf
-                                <input type="text" name="fio_client" id="fio_client" class="inp-add" placeholder="Введите имя" required>
-                                <input type="text" name="number_client" id="number_client" class="inp-add" placeholder="Введите номер" required>
+                                <input type="text" name="fio_client" id="fio_client" class="inp-add inps" placeholder="Введите имя" required>
+                                <input type="text" name="number_client" id="number_client" class="inp-add inps" placeholder="Введите номер" required>
                                 <input type="hidden" name="status_client" id="status_client" value="Выкуп авто">
-                                <input type="submit" value="Добавить">
+                                <div class="btn-box"><button class="item-btn">Отправить</button></div>
                             </form>
                         </div>
                     </div>

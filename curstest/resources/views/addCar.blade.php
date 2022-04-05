@@ -38,11 +38,11 @@
                             <label for="">
                                 Владельцев по ПТС
                             </label>
-                            <input type="text" name="xoz" id="xoz" class="inp-add" pattern="[0-9]{,1}" required>
+                            <input type="text" name="xoz" id="xoz" class="inp-add" placeholder="хоз." pattern="[0-9]{,1}" required>
                             <label for="opis">
                                 Краткое описание
                             </label>
-                            <textarea name="opis" id="opis" cols="30" rows="10" required></textarea>
+                            <textarea name="opis" id="opis" cols="30" rows="10" placeholder="Комплектация, состояние, битая" required></textarea>
 
                             <label for="">
                                 Цена

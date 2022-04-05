@@ -17,6 +17,7 @@ Route::get('/', 'carController@welcomePaginate')->name('/');
 
 Route::post('/submit', 'vikupController@vikupSubmit')->name('vikup-submit');
 Route::post('/uslg-submit', 'vikupController@uslgSubmit')->name('uslg-submit');
+Route::post('/catalog-submit', 'vikupController@zayvkaSubmit')->name('zayvka-submit');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,6 +37,7 @@ Route::get('/deleteCar', 'carController@delcatalogDate')->middleware(['auth'])->
 Route::get('/deleteCar/{id}/delete', 'carController@delcatalogDelete')->middleware(['auth'])->name('car-delete');
 
 Route::get('/clients', 'vikupController@dateClient')->middleware(['auth'])->name('clients');
+Route::get('/clients/{id}/delete', 'vikupController@delClient')->middleware(['auth'])->name('deleteClient');
 
 Route::get('/catalog', 'carController@catalogDate')->name('catalog');
 

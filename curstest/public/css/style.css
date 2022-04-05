@@ -236,7 +236,7 @@ body {
 
 .catalog-item {
     width: 360px;
-    height: 450px;
+    min-height: 450px;
     background: #e4f0f1;
     border-radius: 10px;
     display: flex;
@@ -257,7 +257,8 @@ body {
 }
 
 .item-t {
-    margin-left: 30px;
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
 }
 
@@ -316,17 +317,24 @@ body {
     color: #000000;
     text-decoration: underline;
 }
+.catalog-title {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    font-family: MB;
+    font-size: 28px;
+}
 
 /* Услуги */
 
 .catalog_servis {
-    height: 40vh;
+    height: 30vh;
 }
 
 /*Форма */
 
 .form_manager {
-    height: 40vh;
+    height: 30vh;
 }
 
 /* Футер */
@@ -371,13 +379,14 @@ body {
     border-bottom: 2px solid #000;
     margin-top: 15px;
     margin-bottom: 15px;
+    font-family: MR;
 }
 
 /* catalog-item */
 .catl-item {
     margin-top: 50px;
     width: 800px;
-    height: 450px;
+    min-height: 450px;
     margin-left: 50px;
     margin-right: 50px;
     background: #e4f0f1;
@@ -401,6 +410,21 @@ body {
     justify-content: center;
     margin-top: 20px;
 }
+/* clients */
+.client-box {
+    display: flex;
+    flex-direction: column;
+}
+.client {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+/* servis */
+.servis {
+    height: 70vh;
+}
 /* footee */
 .footer {
     margin-top: 20px;
@@ -414,4 +438,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/* addd */
+.inps {
+    appearance: none;
+    padding-top: 0.5rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+.sels {
+    background-image: url(
+        data:image/svg + xml,
+        %3csvgxmlns="http://www.w3.org/2000/svg"fill="none"viewBox="0 0 20 20"%3e%3cpathstroke="%236b7280"stroke-linecap="round"stroke-linejoin="round"stroke-width="1.5"d="M6 8l4 4 4-4"/%3e%3c/svg%3e
+    );
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    -webkit-print-color-adjust: exact;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    line-height: 1.5rem;
 }
