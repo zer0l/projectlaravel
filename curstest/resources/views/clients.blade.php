@@ -19,7 +19,7 @@
                                 Номер клиента:{{$el->number_client}}
                             </div>
                             <div class="t">
-                                Статус кликнта: {{$el->status_client}}
+                                Статус клиента: {{$el->status_client}}
                             </div>
                             <!-- <div class="t">
                                 <button class="item-btn" id="btn-svyz">Связаться</button>

@@ -324,7 +324,11 @@ body {
     font-family: MB;
     font-size: 28px;
 }
-
+.column-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 /* Услуги */
 
 .catalog_servis {
