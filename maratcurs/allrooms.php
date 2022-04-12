@@ -16,17 +16,27 @@ $connect->query($rel);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
     <title>Document</title>
 </head>
 <body>
-    <a href="profile.php">Профиль</a>
-    <a href="index.php">Главная</a>
-   
-<br>
+<div class="menu1">
+        <ul>
+        <li><a href="index.php">Главная</a></li>
+        <li><a href="profile.php">Личный кабинет</a></li>
+        <?php
+            if($_SESSION['user']['role'] == 'comendant'){echo'<li><a href="addroom.php">Добавить комнату</a></li>
+                <li><a href="addstudentroom.php">Заселить студента</a></li>
+                <li><a href="allstudent.php">Данные об оплате</a></li>';}
+            ?>
+            <li><a href="allrooms.php">Все комнаты</a></li>
+            <li><a href="vendor/logout.php">Выход</a></li>
+        </ul>
+    </div>
     <?php 
         $rooms = "SELECT * FROM  rooms";
         if($result = $connect->query($rooms)){
-            echo "Свободны
+            echo "<div class='profile'><h2>Свободны</h2></div>
             <br>";
             foreach($result as $row){
                 $id = $row['id'];
@@ -38,20 +48,17 @@ $connect->query($rel);
                 $mest = $row['mest'];
                 if($status == "Свободна"){
                 echo "
-                Свободные 
+                <div class='profile'>
                 Корпус: $corpus
                 Этаж: $floor 
                 Комната: $room 
-                Цена: $price 
+                Цена: $price Rub.
                 Количесвто мест: $mest
-                Статус: $status  
-                <form method='post'><input type ='hidden' value='$id' name='gg'>
-                <button type='submit'>Заселена</button>
-                </form>";
-                echo "<br>";
+                Статус: $status
+                </div>";
                 }
             }
-            echo "ЗАНЯТЫ
+            echo "<div class='profile'><h2>Заняты</h2></div>
             <br>";
             foreach($result as $row){
                 $id = $row['id'];
@@ -63,17 +70,14 @@ $connect->query($rel);
                 $mest = $row['mest'];
                 if($status == "Заселена"){
                 echo "
+                <div class='profile'>
                 Корпус: $corpus
                 Этаж: $floor 
                 Комната: $room 
-                Цена: $price 
+                Цена: $price Rub.
                 Количесвто мест: $mest
                 Статус: $status
-                <form method='post'><input type ='hidden' value='$id' name='gg1'>
-                <button type='submit'>Свободна</button>
-                </form>";
-                
-                echo "<br>";
+                </div>";
                 }
             }
 

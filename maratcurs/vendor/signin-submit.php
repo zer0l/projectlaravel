@@ -17,6 +17,7 @@ if(mysqli_num_rows($check_user) > 0)
         "phone" => $user['phone'],
         "fio" => $user['fio'],
         "password" => $user['password'],
+        "role" => $user['role'],
         ];
 
         header("Location: ../profile.php");

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 10 2022 г., 23:52
--- Версия сервера: 5.7.33
--- Версия PHP: 7.4.21
+-- Время создания: Апр 12 2022 г., 14:18
+-- Версия сервера: 8.0.24
+-- Версия PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,19 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `oplata` (
-  `id` bigint(10) NOT NULL,
-  `room_id` bigint(10) NOT NULL,
-  `user_id` bigint(10) NOT NULL,
-  `kolvom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `total_price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` bigint NOT NULL,
+  `room_id` bigint NOT NULL,
+  `user_id` bigint NOT NULL,
+  `kolvom` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_price` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Дамп данных таблицы `oplata`
---
-
-INSERT INTO `oplata` (`id`, `room_id`, `user_id`, `kolvom`, `total_price`) VALUES
-(39, 1, 32, '40', '1280');
 
 -- --------------------------------------------------------
 
@@ -49,21 +42,14 @@ INSERT INTO `oplata` (`id`, `room_id`, `user_id`, `kolvom`, `total_price`) VALUE
 --
 
 CREATE TABLE `rooms` (
-  `id` bigint(10) NOT NULL,
-  `corpus` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `floor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `room` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mest` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` bigint NOT NULL,
+  `corpus` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `floor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `room` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mest` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Дамп данных таблицы `rooms`
---
-
-INSERT INTO `rooms` (`id`, `corpus`, `floor`, `room`, `price`, `status`, `mest`) VALUES
-(39, '40', '40', '40', '40', 'Свободна', '33');
 
 -- --------------------------------------------------------
 
@@ -72,12 +58,12 @@ INSERT INTO `rooms` (`id`, `corpus`, `floor`, `room`, `price`, `status`, `mest`)
 --
 
 CREATE TABLE `users` (
-  `id` bigint(10) NOT NULL,
-  `login` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` bigint NOT NULL,
+  `login` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -85,7 +71,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `password`, `fio`, `phone`, `role`) VALUES
-(1, 'zero', '1', '123', '89274981065', 'student');
+(2, 'zero', '123', 'Чекашкин Аретм Витальевич', '8972551', 'comendant'),
+(5, 'qwerty', '123', 'Наумов Игорь', '789976979', 'student');
 
 --
 -- Индексы сохранённых таблиц
@@ -95,7 +82,9 @@ INSERT INTO `users` (`id`, `login`, `password`, `fio`, `phone`, `role`) VALUES
 -- Индексы таблицы `oplata`
 --
 ALTER TABLE `oplata`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `room_id` (`room_id`,`user_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Индексы таблицы `rooms`
@@ -117,19 +106,30 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `oplata`
 --
 ALTER TABLE `oplata`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT для таблицы `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `oplata`
+--
+ALTER TABLE `oplata`
+  ADD CONSTRAINT `oplata_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `oplata_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

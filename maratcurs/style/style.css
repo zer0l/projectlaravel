@@ -1,0 +1,116 @@
+@font-face {
+    font-family: MN;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+body{
+    height: 100vh;
+    font-family: MN;
+    margin: 0;
+}
+.conteiner{
+    height: 100vh;
+    overflow: hidden;
+    background: url(../img/2903716_800.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color: white;
+    font-family: MN;
+
+}
+.menu{
+    width: 100%;
+}
+.menu ul{
+    display: flex;
+    justify-content: center;
+}
+.menu ul li {
+    list-style: none;
+    margin: 30px;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.menu ul li a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-decoration: underline;
+}
+.menu1{
+    width: 100%;
+}
+.menu1 ul{
+    display: flex;
+    justify-content: center;
+}
+.menu1 ul li {
+    list-style: none;
+    margin: 20px;
+}
+
+.menu1 ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.menu1 ul li a:hover{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    text-decoration: underline;
+}
+.title{
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 24px;
+
+}
+.form{
+    display: flex;
+    justify-content: center;
+    width: 30vh;
+    margin: 0 auto;
+}
+.form-sub{
+    /* margin-top: 100px; */
+    display: flex;
+    flex-direction: column;
+}
+.inps{
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 15px;
+    width: 250px;
+    height: 30px;
+    font-family: MN;
+}
+.btn{
+    background-color: rgba(28,28,28,0);
+    height: 35px;
+    border: 2px solid rgb(138, 138, 138) ;
+    font-family: MN;
+    transition: all 0.5s ease-out;
+}
+.btn:hover{
+    color:white;
+    background: black;
+    transition: all 0.5s ease-out;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile div{
+    border-bottom: 1px solid #000;
+}
