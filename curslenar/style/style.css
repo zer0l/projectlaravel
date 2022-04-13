@@ -1,4 +1,4 @@
-font-face {
+@font-face {
   font-family: MN;
   src: url(../fonts/Montserrat-Regular.ttf);
 }
@@ -6,6 +6,7 @@ body {
   height: 100vh;
   font-family: MN;
   margin: 0;
+  overflow: hidden;
 }
 .conteiner {
   height: 100vh;
@@ -39,4 +40,73 @@ body {
   color: rgb(0, 0, 0);
   font-size: 20px;
   text-decoration: underline;
+}
+.propusk_conteiner {
+  width: 600px;
+  height: 350px;
+
+  background: #ffffff;
+  border: 1px solid #d5d4d4;
+  box-sizing: border-box;
+  box-shadow: 9px 10px 5px rgba(87, 82, 82, 0.25);
+  position: relative;
+}
+.propusk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.number_conteiner {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.propusk_number {
+  font-family: MN;
+  margin-top: 10px;
+}
+.zone_propusk {
+  margin-top: 72px;
+}
+.img img {
+  width: 100px;
+  height: 100px;
+}
+.img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 55px;
+  right: 85px;
+}
+.inps {
+  border: none;
+  border-bottom: 2px solid black;
+  margin-bottom: 15px;
+  width: 250px;
+  height: 30px;
+  font-family: MN;
+}
+.btn {
+  background-color: rgba(28, 28, 28, 0);
+  height: 35px;
+  border: 2px solid rgb(138, 138, 138);
+  font-family: MN;
+  transition: all 0.5s ease-out;
+}
+.btn:hover {
+  color: white;
+  background: black;
+  transition: all 0.5s ease-out;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  width: 30vh;
+  margin: 0 auto;
+}
+.form-sub {
+  /* margin-top: 100px; */
+  display: flex;
+  flex-direction: column;
 }

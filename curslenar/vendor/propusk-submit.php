@@ -6,6 +6,9 @@ $zone = $_POST['zone'];
 $user = $_POST['user'];
 $number_propusk = rand();
 
-mysqli_query($connect, "INSERT INTO `propusk`(`zone_id`,`user_id`,`number_propusk`) VALUES ('$zone','$user','$number_propusk')");
+$rel = "UPDATE `users` SET `num_propusk` = '$number_propusk' WHERE `id` = $user";
+$connect->query($rel);
+
+mysqli_query($connect, "INSERT INTO `propusk`(`zone_id`,`user_id`) VALUES ('$zone','$user')");
 
 header('Location: ../addpropusk.php');
