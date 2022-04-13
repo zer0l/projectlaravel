@@ -1,0 +1,42 @@
+font-face {
+  font-family: MN;
+  src: url(../fonts/Montserrat-Regular.ttf);
+}
+body {
+  height: 100vh;
+  font-family: MN;
+  margin: 0;
+}
+.conteiner {
+  height: 100vh;
+  overflow: hidden;
+  background: url(../img/2903716_800.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(0, 0, 0);
+  font-family: MN;
+}
+.menu {
+  width: 100%;
+}
+.menu ul {
+  display: flex;
+  justify-content: center;
+}
+.menu ul li {
+  list-style: none;
+  margin: 30px;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.menu ul li a:hover {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  text-decoration: underline;
+}
